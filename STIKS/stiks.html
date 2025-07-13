@@ -1,0 +1,127 @@
+
+<div class="sheet-stat-block">
+  <label>Имя персонажа</label>
+  <input type="text" name="attr_character_name">
+</div>
+
+<div class="sheet-stat-block">
+  <label>Здоровье</label>
+  <input type="number" name="attr_health" value="0" disabled>
+</div>
+<div class="sheet-stat-block">
+  <label>Урон</label>
+  <input type="number" name="attr_damage" value="0" disabled>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Выносливость</label>
+  <input type="number" name="attr_endurance" min="1" max="5" value="1">
+  <input type="number" name="attr_endurance_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Риск (Выносливость) --mod|@{endurance_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Выносливость) --mod|@{endurance_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Анализ</label>
+  <input type="number" name="attr_analysis" min="1" max="5" value="1">
+  <input type="number" name="attr_analysis_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Оценка (Анализ) --mod|@{analysis_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|3 вопроса и бонус --elseif:[result]>=10|then --resultText|2 вопроса --elseif:[result]>=7|then --resultText|1 вопрос + риск --else --resultText|Провал --end --return|[resultText] }}">Оценка</button>
+    <button type="roll" value="!scriptcard {{ --title|Риск (Анализ) --mod|@{analysis_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Анализ) --mod|@{analysis_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Проницательность</label>
+  <input type="number" name="attr_perception" min="1" max="5" value="1">
+  <input type="number" name="attr_perception_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Оценка (Проницательность) --mod|@{perception_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|3 вопроса и бонус --elseif:[result]>=10|then --resultText|2 вопроса --elseif:[result]>=7|then --resultText|1 вопрос + риск --else --resultText|Провал --end --return|[resultText] }}">Оценка</button>
+    <button type="roll" value="!scriptcard {{ --title|Риск (Проницательность) --mod|@{perception_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Проницательность) --mod|@{perception_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Хитрость</label>
+  <input type="number" name="attr_cunning" min="1" max="5" value="1">
+  <input type="number" name="attr_cunning_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Договориться --mod|@{cunning_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Сильное согласие + бонус --elseif:[result]>=10|then --resultText|Соглашается --elseif:[result]>=7|then --resultText|Согласие с ценой --else --resultText|Провал --end --return|[resultText] }}">Договор</button>
+    <button type="roll" value="!scriptcard {{ --title|Риск (Хитрость) --mod|@{cunning_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Хитрость) --mod|@{cunning_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Атлетика</label>
+  <input type="number" name="attr_athletics" min="1" max="5" value="1">
+  <input type="number" name="attr_athletics_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Риск (Атлетика) --mod|@{athletics_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Атлетика) --mod|@{athletics_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-stat-block">
+  <label>Бой</label>
+  <input type="number" name="attr_fight" min="1" max="5" value="1">
+  <input type="number" name="attr_fight_mod" disabled>
+  <div class="sheet-roll-buttons">
+    <button type="roll" value="!scriptcard {{ --title|Нападение --mod|@{fight_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Урон + эффект --elseif:[result]>=10|then --resultText|Урон без последствий --elseif:[result]>=7|then --resultText|Урон + последствие --else --resultText|Провал --end --return|[resultText] }}">Нападение</button>
+    <button type="roll" value="!scriptcard {{ --title|Риск (Бой) --mod|@{fight_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Крит успех! --elseif:[result]>=10|then --resultText|Успех --elseif:[result]>=7|then --resultText|Полууспех --else --resultText|Провал --end --return|[resultText] }}">Риск</button>
+    <button type="roll" value="!scriptcard {{ --title|Помощь (Бой) --mod|@{fight_mod} --dice|2d6 --result|[+dice] + [+mod] --if:[result]>=12|then --resultText|Отличная помощь! --elseif:[result]>=10|then --resultText|Помогаешь --elseif:[result]>=7|then --resultText|Есть риск --else --resultText|Ты мешаешь --end --return|[resultText] }}">Помощь</button>
+  </div>
+</div>
+
+<div class="sheet-flex-block">
+  <div class="sheet-text-col">
+    <label>История</label>
+    <textarea name="attr_backstory"></textarea>
+  </div>
+  <div class="sheet-text-col">
+    <label>Снаряжение</label>
+    <textarea name="attr_equipment"></textarea>
+  </div>
+  <div class="sheet-text-col">
+    <label>Способность</label>
+    <textarea name="attr_ability"></textarea>
+  </div>
+</div>
+
+<script type="text/worker">
+const modMap = { 1: -1, 2: 0, 3: 1, 4: 2, 5: 3 };
+
+const updateMods = (field) => {
+  on(`change:${field}`, () => {
+    getAttrs([field], (v) => {
+      const val = parseInt(v[field]) || 1;
+      const mod = modMap[val] ?? -1;
+      setAttrs({ [`${field}_mod`]: mod });
+    });
+  });
+};
+
+const updateHealthAndDamage = () => {
+  getAttrs(["endurance", "athletics", "fight"], function (v) {
+    const end = parseInt(v.endurance) || 1;
+    const ath = parseInt(v.athletics) || 1;
+    const fight = parseInt(v.fight) || 1;
+    const health = end + ath;
+    const damage = Math.floor((ath + fight) / 2);
+    setAttrs({ "health": health, "damage": damage });
+  });
+};
+
+["endurance", "analysis", "perception", "cunning", "athletics", "fight"].forEach((field) => {
+  updateMods(field);
+  on(`change:${field}`, updateHealthAndDamage);
+});
+
+on("sheet:opened", () => {
+  updateHealthAndDamage();
+});
+</script>
