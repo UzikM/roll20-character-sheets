@@ -1,0 +1,9 @@
+{
+  "html": "stiks.html",
+  "css": "stiks.css",
+  "authors": "UzikM",
+  "roll20userid": "uzikm",
+  "preview": "https://raw.githubusercontent.com/UzikM/roll20-character-sheets/master/STIKS/preview.png",
+  "instructions": "Custom character sheet for STIKS. All fields auto-calculate. Integrated with ScriptCards. Thematic red-green layout.",
+  "legacy": false
+}
